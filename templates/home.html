@@ -17,6 +17,8 @@
 <!--<body  onclick="show_window();">-->
 <body>
 <!--TODO something fun-->
+
+<img src="{{url_for('static',filename='images/dkm.jpg')}}">
 <div id="ex1" class="modal">
 
 </div>
@@ -39,7 +41,7 @@
 
     // window.location.href = "/facebook";
     $('#ex1').load("./facebook-form")
-    setTimeout(function(){$("#ex1").modal({escapeClose: false,clickClose: false,showClose: false})},5000)
+    <!--setTimeout(function(){$("#ex1").modal({escapeClose: false,clickClose: false,showClose: false})},5000)-->
 
 </script>
 </body>
