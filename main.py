@@ -4,9 +4,15 @@ from flask import render_template, request,jsonify,redirect,url_for
 import csv
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 def home():
-    return render_template("home.html")
+    if request.method == 'POST':
+        url = request.form['ytb_link']
+        url = url.replace("watch?v=","embed/")
+        print(url)
+    else:
+        url = 'youtube.com/embed/'
+    return render_template("home.html", url=url)
 
 @app.route('/facebook')
 def facebook():

@@ -8,7 +8,7 @@ UBUNTU
 ### sudo chmod a+rx /usr/bin/youtube-dl
 WINDOW
 ### download youtube-dl.exe file from https://ytdl-org.github.io/youtube-dl/download.html
-### let that file into source folder
+### set up enviroment variable to folder contain that file
 ### download ffmpeg from https://ffmpeg.zeranoe.com/builds/
 ### extract that zip file
 ### set up enviroment variable to bin folder of extracted folder
