@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>test</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="/static/js/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -12,34 +12,19 @@
 </head>
 
 <body>
-<form action="#" method="POST">
-<input name="ytb_link" type="text">
-<input type="submit">
-</form>
-<iframe width="560" height="315" src="{{url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<input id="ytb_link" name="ytb_link" type="text">
+<input type="button" onclick="changeYoutubeUrl()">
 
-<script>
-    // function show_window(){
-    //     // window.open('/facebook-form','_blank','width=700,height=500')
-    //     $.ajax({
-    //       type: 'POST',
-    //       url: '/ajax',
-    //       success: function(result){
-    //         console.log(result)
-    //         setTimeout(window.open(result.url,'_blank','width=700,height=500'),5000)
-    //         window.close()
-    //       },
-    //       async:false
-    //     });
-    // }
+<div id="video-youtube"></div>
+<script id="youtube-tracking-script"></script>
+
+<button id="start_time" onclick="startTimeClick(this)">Start</button>
+<button id="stop_time" onclick="stopTimeClick(this)">End</button>
 
 
-    // window.location.href = "/facebook";
-    $('#ex1').load("./facebook-form")
-    <!--setTimeout(function(){$("#ex1").modal({escapeClose: false,clickClose: false,showClose: false})},5000)-->
-
-</script>
 </body>
+
+<script src="/static/js/home.js"></script>
 </html>
 
 
