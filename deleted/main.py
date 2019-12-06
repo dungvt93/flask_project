@@ -1,23 +1,20 @@
 # -*- coding: utf-8 -*-
-from flask import Flask
 from flask import render_template, request,jsonify,redirect,url_for
-import csv
-from service import youtube_service
-ytb_service = youtube_service.YoutubeService();
+from flask import Blueprint
 
-
-# @app.route('/',methods=['GET','POST'])
-# def home():
-#     if request.method == 'POST':
-#         url = request.form['ytb_link']
-#         url = url.replace("watch?v=","embed/")
-#         print("processed url: "+url)
-#     else:
-#         # default is youtube homepage
-#         url = 'http://youtube.com/embed/'
-#     return render_template("home.html", url=url)
-
+images = Blueprint('home', __name__)
 @app.route('/',methods=['GET','POST'])
+def home():
+    if request.method == 'POST':
+        url = request.form['ytb_link']
+        url = url.replace("watch?v=","embed/")
+        print("processed url: "+url)
+    else:
+        # default is youtube homepage
+        url = 'http://youtube.com/embed/'
+    return render_template("home.html", url=url)
+
+@images.route('/',methods=['GET','POST'])
 def home():
     return render_template("home.html")
 
