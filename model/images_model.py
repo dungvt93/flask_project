@@ -1,7 +1,7 @@
-from base_model import *
-from db_helper.db_type import *
-from db_helper.mysql_connection import *
-from entity.images import *
+from model.base_model import *
+from model.db_helper.db_type import *
+from model.db_helper.mysql_connection import *
+from model.entity.images import *
 
 
 class ImagesModel(BaseModel):

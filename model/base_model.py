@@ -1,4 +1,4 @@
-from db_helper.db_type import DBType
+from model.db_helper.db_type import DBType
 from abc import *
 
 

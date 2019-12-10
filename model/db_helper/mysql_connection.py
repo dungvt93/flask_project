@@ -1,5 +1,5 @@
 import mysql.connector
-from db_helper import config
+from model.db_helper import config
 
 
 class MySQLConnection:
