@@ -13,6 +13,7 @@ mod = Blueprint('home', __name__)
 def home():
     return render_template("home.html")
 
+UPLOAD_IMG_FOLDER = "/static/images/"
 @mod.route('/add_image', methods=['POST'])
 def add_image():
     # TODO add image
@@ -20,7 +21,7 @@ def add_image():
         url = request.form['image_url']
         if url:
             unique_filename = str(uuid.uuid4())
-            urllib.request.urlretrieve(url, UPLOAD_IMG + "\\" + unique_filename)
+            urllib.request.urlretrieve(url, UPLOAD_IMG_FOLDER + "\\" + unique_filename)
             entity = Images(0,UPLOAD_IMG + "\\" + unique_filename, 0,1)
             img_model = ImagesModel()
             img_model.insert_by_entity(entity)
