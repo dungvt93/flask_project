@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    {% endblock %}
+    <script src="/static/js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+    {%include 'menu.html'%}
+</header>
+
+<section>
+    {% include 'category.html' %}
+    <article>
+        {% block content %}
+        {% endblock %}
+    </article>
+</section>
+
+<footer>
+    {% include 'footer.html' %}
+</footer>
+</body>
+</html>

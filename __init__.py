@@ -10,4 +10,4 @@ app = Flask(__name__, template_folder=template_dir)
 app.register_blueprint(home.mod)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=8080)

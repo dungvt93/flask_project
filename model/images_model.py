@@ -12,10 +12,11 @@ class ImagesModel(BaseModel):
         BaseModel.__init__(self, connect, db_type)
 
     def get_by_id(self, id):
-        data = self.query(query_string="select * from images where id = {}".format(id))
+        query = "SELECT * FROM images WHERE id = %s"
+        data = self.query(query, (id,))
         return self.create_instance(data)
 
-
-with MySQLConnection() as provider:
-    imagesModel = ImagesModel(provider)
-    imagesModel.get_by_id(1)
+    def insert_by_entity(self, images_entity):
+        query = "INSERT INTO images (path, category_id, is_public) VALUE(%s, %s ,%s)"
+        data = self.query(query,(images_entity.path, images_entity.category_id, images_entity.is_public))
+        return data
