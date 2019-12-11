@@ -8,13 +8,13 @@ class BaseModel:
         self.db_type = db_type
         self.conn = conn
 
-    def query(self, query_string, param_list):
+    def insert(self, query_string, param_list):
         result = None
         if self.db_type == DBType.MYSQL:
             try:
                 cursor = self.conn.cursor()
                 cursor.execute(query_string, param_list)
-                result = cursor.fechall()
+                #result = cursor.fetchall()
             except Exception as e:
                 self.conn.rollback()
                 raise e

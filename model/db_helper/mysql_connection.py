@@ -1,5 +1,5 @@
-import mysql.connector
 from model.db_helper import config
+import mysql.connector as connector
 
 
 class MySQLConnection:
@@ -8,13 +8,14 @@ class MySQLConnection:
 
     def __enter__(self):
         self.conn = None
-        self.conn = mysql.connector.connect(
+        self.conn = connector.connect(
             db=self.database_info["database"],
             host=self.database_info["host"],
             user=self.database_info["user"],
             passwd=self.database_info["password"],
             charset="utf8")
-        self.conn.autocommit(False)
+        print(self.conn)
+        #self.conn.autocommit(False)
         return self.conn
 
     def __exit__(self, exc_type, exc_val, exc_tb):
