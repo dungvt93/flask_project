@@ -24,7 +24,7 @@ def add_image():
             unique_filename = str(uuid.uuid4())
             urllib.request.urlretrieve(url, unique_filename+".jpg")
             entity = Images(0,unique_filename+".jpg", 0,1)
-            with MySQLConnection as mysql_con:
+            with MySQLConnection() as mysql_con:
                 img_model = ImagesModel(mysql_con)
                 img_model.insert_by_entity(entity)
 
